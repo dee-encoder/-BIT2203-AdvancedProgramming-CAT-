@@ -7,19 +7,15 @@ import javax.servlet.annotation.WebServlet;
 @WebServlet("/ShoppingCartServlet")
 public class ShoppingCartServlet extends HttpServlet {
 
-    // Handles adding an item to the cart (e.g., called when "Add to Cart" button is clicked)
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         String itemName = request.getParameter("item");
 
-        // Get the existing session, or create one if it doesn't exist yet
         HttpSession session = request.getSession(true);
 
-        // Set a reasonable timeout so the cart doesn't expire too quickly
-        session.setMaxInactiveInterval(30 * 60); // 30 minutes
+        session.setMaxInactiveInterval(30 * 60);
 
-        // Retrieve the current cart list from the session
         List<String> cart = (List<String>) session.getAttribute("cart");
 
         if (cart == null) {
@@ -29,8 +25,6 @@ public class ShoppingCartServlet extends HttpServlet {
         if (itemName != null && !itemName.trim().isEmpty()) {
             cart.add(itemName);
         }
-
-        // Save the updated cart back into the session
         session.setAttribute("cart", cart);
 
         response.setContentType("text/html");
@@ -39,13 +33,9 @@ public class ShoppingCartServlet extends HttpServlet {
         out.println("<p>Total items in cart: " + cart.size() + "</p>");
     }
 
-    // Handles displaying/retrieving the cart contents (e.g., on the checkout page)
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // IMPORTANT: use getSession() (or getSession(true)) — 
-        // NOT getSession(false), which would return null if no session exists yet,
-        // incorrectly making the cart appear "empty" even for a returning user.
         HttpSession session = request.getSession(true);
 
         List<String> cart = (List<String>) session.getAttribute("cart");
