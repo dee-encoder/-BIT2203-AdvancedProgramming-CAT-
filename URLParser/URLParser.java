@@ -12,15 +12,20 @@ public class URLParser {
             System.out.println("Original URL: " + urlString);
             System.out.println("----------------------------------------");
 
+            // Protocol (scheme)
             System.out.println("Protocol: " + url.getProtocol());
 
+            // Host
             System.out.println("Host: " + url.getHost());
 
+            // Port (returns -1 if not explicitly set)
             int port = url.getPort();
             System.out.println("Port: " + (port == -1 ? "Default (-1, none specified)" : port));
 
+            // Path
             System.out.println("Path: " + url.getPath());
 
+            // Query parameters
             String query = url.getQuery();
             System.out.println("Query String: " + query);
             System.out.println("Query Parameters:");
@@ -36,6 +41,7 @@ public class URLParser {
                 System.out.println("   (none)");
             }
 
+            // Fragment (reference)
             System.out.println("Fragment: " + url.getRef());
 
         } catch (MalformedURLException e) {
