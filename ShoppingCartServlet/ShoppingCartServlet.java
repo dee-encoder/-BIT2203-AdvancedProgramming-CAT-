@@ -7,7 +7,7 @@ import javax.servlet.annotation.WebServlet;
 @WebServlet("/ShoppingCartServlet")
 public class ShoppingCartServlet extends HttpServlet {
 
-    // Handles adding an item to the cart
+    // Handles adding an item to the cart (e.g., called when "Add to Cart" button is clicked)
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 

@@ -26,7 +26,7 @@ public class LifecycleServlet extends HttpServlet {
     public void service(ServletRequest request, ServletResponse response)
             throws ServletException, IOException {
         System.out.println("[LIFECYCLE] service() called - Handling an incoming request.");
-        super.service(request, response); // delegates to doGet/doPost/etc.
+        super.service(request, response); // delegates to doGet/doPost
     }
 
     // Handles GET requests specifically (dispatched from service())
