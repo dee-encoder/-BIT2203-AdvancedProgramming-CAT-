@@ -19,7 +19,7 @@ Shopping cart data disappearing at checkout is most often caused by:
 - `doGet(...)` — retrieves and displays all items currently in the cart
 
 ## How to Run
-Requires a servlet container (e.g., Apache Tomcat), since Servlets don't run as standalone Java programs.
+Requires a servlet container (Apache Tomcat), since Servlets don't run as standalone Java programs.
 
 1. Compile with the Servlet API on the classpath: javac -cp servlet-api.jar ShoppingCartServlet.java
 2. Deploy to a Tomcat webapp and access via: http://localhost:8080/jgrasp/ShoppingCartServlet
