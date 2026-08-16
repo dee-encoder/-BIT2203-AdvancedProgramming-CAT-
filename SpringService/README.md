@@ -1,4 +1,4 @@
-# Spring Dependency Injection Demo
+# Spring Dependency Injection
 
 ## Description
 Demonstrates Dependency Injection (DI) in the Spring Framework using constructor injection, where a `UserService` depends on a `UserRepository`.
