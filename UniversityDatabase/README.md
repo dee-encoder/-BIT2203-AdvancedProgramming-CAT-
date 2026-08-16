@@ -3,7 +3,7 @@
 ## Description
 A JDBC program demonstrating database connectivity, table creation, data insertion, and filtered data retrieval using Java's `java.sql` package.
 
-## Sample Database Config
+## Database Config
 - Database: `university_db`
 - Username: `admin`
 - Password: `secure123`
@@ -15,13 +15,13 @@ A JDBC program demonstrating database connectivity, table creation, data inserti
    - `course_name` — VARCHAR(100)
    - `credits` — INT
    - `department` — VARCHAR(50)
-3. Inserts three sample courses using `PreparedStatement`
+3. Inserts three courses using `PreparedStatement`
 4. Retrieves and displays all courses belonging to the **Computer Science** department
 
 ## Why PreparedStatement
 `PreparedStatement` is used instead of `Statement` throughout to prevent SQL injection (user/query values are never concatenated directly into SQL) and to allow the database to reuse the compiled query plan on repeated execution.
 
 ## Requirements
-- A running MySQL server
+- A running MySQL server.
 - A database named `university_db`
 - A MySQL user `admin` with password `secure123` and privileges on `university_db`
