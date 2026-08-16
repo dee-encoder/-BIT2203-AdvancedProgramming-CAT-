@@ -13,8 +13,8 @@ A Java Servlet that demonstrates the full servlet lifecycle managed by the web c
 ## How to Run
 Requires a servlet container (Apache Tomcat), since Servlets don't run as standalone Java programs.
 
-1. Compile with the Servlet API on the classpath: javac -cp servlet-api.jar LifecycleDemoServlet.java
-2. Deploy to a Tomcat webapp and access via: http://localhost:8080/yourapp/LifecycleDemoServlet
+1. Compile with the Servlet API on the classpath: javac -cp servlet-api.jar LifecycleServlet.java
+2. Deploy to a Tomcat webapp and access via: http://localhost:8080/jgrasp/LifecycleServlet
 3. Watch the Tomcat console output — it will print lifecycle log messages in order as the servlet is initialized, handles requests, and is eventually destroyed.
 
 ## Requirements
